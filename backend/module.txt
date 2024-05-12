@@ -1,0 +1,7 @@
+aiohttp
+asyncio
+selenium
+fastapi
+pydantic
+uvicorn
+bcrypt

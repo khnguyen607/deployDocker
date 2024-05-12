@@ -1,0 +1,309 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang quản trị</title>
+  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
+</head>
+
+<body>
+  <div class="d-flex justify-content-end">
+    <a href="changeinfo.html" class="btn btn-outline-danger">Đổi thông tin tài khoản</a>
+  </div>
+  <section class="d-flex justify-content-center">
+    <nav class="navbar navbar-light bg-light">
+      <form class="container-fluid justify-content-start">
+        <button class="btn btn-outline-success mx-2" type="button" onclick="nav_tip(this)">Quản lý hoa hồng</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button" onclick="nav_account(this)">Quản lý tài
+          khoản</button>
+      </form>
+    </nav>
+    <script>
+      function nav_tip(e) {
+        e.parentNode.innerHTML = `
+        <button class="btn btn-outline-success mx-2" type="button" onclick="nav_tip(this)">Quản lý hoa hồng</button>
+        <button class="btn btn-sm btn-outline-secondary" type="button" onclick="nav_account(this)">Quản lý tài khoản</button>
+        `
+        document.querySelector('section.tip').classList.remove('d-none')
+        document.querySelector('section.account').classList.add('d-none')
+      }
+      function nav_account(e) {
+        e.parentNode.innerHTML = `
+        <button class="btn btn-sm btn-outline-secondary" type="button" onclick="nav_tip(this)">Quản lý hoa hồng</button>
+        <button class="btn btn-outline-success mx-2" type="button" onclick="nav_account(this)">Quản lý tài khoản</button>
+        `
+        document.querySelector('section.tip').classList.add('d-none')
+        document.querySelector('section.account').classList.remove('d-none')
+      }
+    </script>
+  </section>
+
+  <section class="container tip">
+    <form id="submit-form" class="row">
+      <div class="col-6">
+        <label class="form-label" for="villa2">Villa 2</label>
+        <input class="form-control" name="villa2" id="villa2" type="text">
+      </div>
+      <div class="col-6">
+        <label class="form-label" for="villa3">Villa 3</label>
+        <input class="form-control" name="villa3" id="villa3" type="text">
+      </div>
+      <div class="col-6">
+        <label class="form-label" for="villa4">Villa 4</label>
+        <input class="form-control" name="villa4" id="villa4" type="text">
+      </div>
+      <div class="col-6">
+        <label class="form-label" for="villa5">Villa 5</label>
+        <input class="form-control" name="villa5" id="villa5" type="text">
+      </div>
+      <div class="col-12">
+        <label class="form-label" for="diff">Loại khác</label>
+        <input class="form-control" name="diff" id="diff" type="text">
+      </div>
+
+      <div class="my-2">
+        <label class="form-label">Công thức DO - Phụ thu</label>
+        <div class="row">
+          <div class="col-6">
+            <input class="form-control" name="ddo" id="ddo" type="text" placeholder="Công thức DO">
+          </div>
+          <div class="col-6">
+            <input class="form-control" name="surddo" id="surddo" type="text" placeholder="Phụ thu DO">
+          </div>
+        </div>
+        <div class="form-text">(Giá gói DO = (Giá sau-giá trước) /0.9*[số bất kỳ] ++[lãi thêm])</div>
+      </div>
+
+      <div class="my-2">
+        <label class="form-label">Công thức D07 - Phụ thu</label>
+        <div class="row">
+          <div class="col-6">
+            <input class="form-control" name="d7" id="d7" type="text" placeholder="Công thức D07">
+          </div>
+          <div class="col-6">
+            <input class="form-control" name="surd7" id="surd7" type="text" placeholder="Phụ thu D07">
+          </div>
+        </div>
+        <div class="form-text">(Giá gói D07 = (Giá sau-giá trước) /0.93*[số bất kỳ] ++[lãi thêm])</div>
+      </div>
+
+      <div class="my-2">
+        <label class="form-label">Công thức D12 - Phụ thu</label>
+        <div class="row">
+          <div class="col-6">
+            <input class="form-control" name="d12" id="d12" type="text" placeholder="Công thức D12">
+          </div>
+          <div class="col-6">
+            <input class="form-control" name="surd12" id="surd12" type="text" placeholder="Phụ thu D12">
+          </div>
+        </div>
+        <div class="form-text">(Giá gói D12 = (Giá sau-giá trước) /0.875*[số bất kỳ] ++[lãi thêm])</div>
+      </div>
+
+      <div class="my-2">
+        <label class="form-label">Công thức D15 - Phụ thu</label>
+        <div class="row">
+          <div class="col-6">
+            <input class="form-control" name="d15" id="d15" type="text" placeholder="Công thức D15">
+          </div>
+          <div class="col-6">
+            <input class="form-control" name="surd15" id="surd15" type="text" placeholder="Phụ thu D15">
+          </div>
+        </div>
+        <div class="form-text">(Giá gói D15 = (Giá sau-giá trước) /0.85*[số bất kỳ] ++[lãi thêm])</div>
+      </div>
+
+
+      <div class="d-flex justify-content-center my-1">
+        <a class="btn btn-primary rounded-5" onclick="submit()">Cập nhật</a>
+      </div>
+    </form>
+  </section>
+
+  <section class="container account d-none">
+    <form id="c_submit-form" class="row">
+      <h3>Tài khoản Vin</h3>
+      <div class="col-6">
+        <label class="form-label" for="user">Tài khoản</label>
+        <input class="form-control" name="user" id="user" type="text">
+      </div>
+      <div class="col-6">
+        <label class="form-label" for="pwd">Mật khẩu</label>
+        <input class="form-control" name="pwd" id="pwd" type="text">
+      </div>
+      <div class="text-center mt-1">
+        <a class="btn btn-danger" id="del">Xóa dữ liệu tài khoản cũ</a>
+      </div>
+
+      <div class="my-2">
+        <hr>
+      </div>
+
+      <h3>Tài khoản check phòng</h3>
+      <div class="col-6">
+        <label class="form-label" for="c_user">Tài khoản</label>
+        <input class="form-control" name="c_user" id="c_user" type="text">
+      </div>
+      <div class="col-6">
+        <label class="form-label" for="c_pwd">Mật khẩu</label>
+        <input class="form-control" name="c_pwd" id="c_pwd" type="text">
+      </div>
+
+      <div class="my-2">
+        <hr>
+      </div>
+
+      <h3>Nội dung quảng cáo</h3>
+      <div class="col-12">
+        <!-- Create the editor container -->
+        <div id="ads">
+          <p>Hello World!</p>
+          <p>Some initial <strong>bold</strong> text</p>
+          <p><br></p>
+        </div>
+
+        <!-- Initialize Quill editor -->
+        <script>
+          document.querySelector('button').addEventListener('click', () => {
+            document.querySelector('#result').innerHTML = document.querySelector('#ads .ql-editor').innerHTML
+          })
+          var quill = new Quill('#ads', {
+            theme: 'snow'
+          });
+        </script>
+      </div>
+
+      <div class="d-flex justify-content-center mt-5">
+        <a class="btn btn-primary rounded-5" onclick="submit()" style="z-index: 100;">Cập nhật</a>
+      </div>
+    </form>
+  </section>
+
+  <div class="alert alert-primary container text-center d-none" role="alert" id="result"></div>
+</body>
+
+
+
+<script>
+  var server = ""
+  fetch('server.txt')
+    .then(response => response.text())
+    .then(se => {
+      server = se
+      // xóa dữ liệu 
+      document.getElementById('del').addEventListener('click', async () => {
+        fetch(server + '/delete?access=' + JSON.parse(sessionStorage.getItem('access')))
+          .then(response => response.text())
+          .then(function (data) {
+            console.log(data)
+            result.innerText = data
+          })
+          .catch(function (error) {
+            alert('Xóa dữ liệu không thành công')
+          });
+      })
+
+      // Nhận dữ liệu 
+      const result = document.getElementById('result');
+
+      const user = document.getElementById('user');
+      const pwd = document.getElementById('pwd');
+      const c_user = document.getElementById('c_user');
+      const c_pwd = document.getElementById('c_pwd');
+      const villa2 = document.getElementById('villa2');
+      const villa3 = document.getElementById('villa3');
+      const villa4 = document.getElementById('villa4');
+      const villa5 = document.getElementById('villa5');
+      const diff = document.getElementById('diff');
+      const ddo = document.getElementById('ddo');
+      const d7 = document.getElementById('d7');
+      const d12 = document.getElementById('d12');
+      const d15 = document.getElementById('d15');
+      const surddo = document.getElementById('surddo');
+      const surd7 = document.getElementById('surd7');
+      const surd12 = document.getElementById('surd12');
+      const surd15 = document.getElementById('surd15');
+      const ads = document.getElementById('ads');
+
+      fetch(server + "/datamain?access=" + JSON.parse(sessionStorage.getItem('access')))
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Lỗi mạng - " + response.status);
+          }
+          return response.json();
+        })
+        .then(function (data) {
+          console.log((data));
+          if (String(data) == 'false') {
+            window.location.href = 'login.html'
+          }
+          user.value = data["user"];
+          pwd.value = data["pass"];
+          c_user.value = data["account"]["user"];
+          c_pwd.value = data["account"]["password"];
+          villa2.value = data["Villa 2"].toString();
+          villa3.value = data["Villa 3"].toString();
+          villa4.value = data["Villa 4"].toString();
+          villa5.value = data["Villa 5"].toString();
+          diff.value = data["other"].toString();
+          ddo.value = data["DO"];
+          d7.value = data["D07"];
+          d12.value = data["D12"];
+          d15.value = data["D15"];
+          surddo.value = data["surddo"];
+          surd7.value = data["surd7"];
+          surd12.value = data["surd12"];
+          surd15.value = data["surd15"];
+          ads.querySelector('.ql-editor').innerHTML = data["ads"];
+        })
+        .catch(function (error) {
+          console.error("Lỗi: " + error.message);
+          result.innerText = "Lỗi: " + error.message;
+        });
+    })
+
+
+  // Gửi dữ liệu
+  async function submit() {
+    const form = document.getElementById('submit-form');
+    const c_form = document.getElementById('c_submit-form');
+    const resultDiv = document.getElementById('result');
+
+    const formData = new FormData(form);
+    const c_formData = new FormData(c_form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+    c_formData.forEach((value, key) => {
+      data[key] = value;
+    });
+    data['ads'] = document.querySelector('#ads .ql-editor').innerHTML
+    data['token'] = JSON.parse(sessionStorage.getItem('access'))
+
+    fetch(server + '/updatemain', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    })
+      .then(response => response.text())
+      .then(dank => {
+        resultDiv.classList.remove('d-none', 'alert-danger')
+        resultDiv.classList.add('alert-primary')
+        resultDiv.textContent = 'Đã cập nhật dữ liệu thành công';
+      })
+      .catch(error => {
+        resultDiv.classList.remove('d-none', 'alert-primary')
+        resultDiv.classList.add('alert-danger')
+        resultDiv.textContent = 'Lỗi';
+      })
+  }
+
+
+</script>

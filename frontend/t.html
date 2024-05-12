@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
+    <title>Autocomplete with Default All Options</title>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <label for="ks">Chọn một lựa chọn:</label>
+        <input type="text" class="form-control" id="ks" placeholder="Nhập nội dung để lọc...">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script>
+        $(function () {
+            var availableTags = [
+                "Vinpearl Beachfront Nha Trang",
+                "Vinpearl Resort & Golf Nam Hội An",
+                "Vinpearl Wonderworld Phú Quốc",
+                "Vinpearl Sealink Nha Trang",
+                "Vinpearl Resort & Spa Phú Quốc",
+                "Vinpearl Resort & Spa Nha Trang Bay",
+                "Vinpearl Resort Nha Trang",
+                "Vinpearl Luxury Nha Trang",
+                "Vinpearl Resort & Spa Hội An",
+                "Vinpearl Resort & Spa Đà Nẵng",
+                "Vinpearl Golflink Nha Trang",
+                "VinHolidays Fiesta Phú Quốc",
+                "Vinpearl Resort & Spa Hạ Long",
+                "Hòn Tằm Resort"
+            ];
+
+            $("#ks").autocomplete({
+                source: function (request, response) {
+                    var term = request.term;
+                    if ($("#ks").is(":click")) {
+                        response(availableTags);
+                    } else {
+                        var matcher = new RegExp($.ui.autocomplete.escapeRegex(term), "i");
+                        response($.grep(availableTags, function (value) {
+                            return matcher.test(value);
+                        }));
+                    }
+                }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
