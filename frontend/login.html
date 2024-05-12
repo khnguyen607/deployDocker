@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Đăng nhập</title>
+  <link rel="stylesheet" href="assets/css/login.css">
+</head>
+
+<body>
+  <form id="login">
+    <div class="segment">
+      <h4 style="color: red; display: none;" id="error__pass">Sai tài khoản mật khẩu</h4>
+      <h4 style="color: red; display: none;" id="errer__role">Tài khoản hiện tại không khả dụng</h4>
+      <h1>Đăng nhập</h1>
+    </div>
+
+    <label>
+      <input type="text" placeholder="Tên đăng nhập" id="user" />
+    </label>
+
+    <label>
+      <input type="password" placeholder="Mật khẩu" id="password" />
+    </label>
+
+    <button class="red" type="submit"><i class="icon ion-md-lock"></i> Đăng nhập</button>
+    </div>
+  </form>
+</body>
+
+<script>
+  function setCookie(name, value, daysToExpire) {
+    var expirationDate = new Date();
+    expirationDate.setDate(expirationDate.getDate() + daysToExpire);
+
+    var cookie = name + '=' + encodeURIComponent(value) + '; expires=' + expirationDate.toUTCString() + '; path=/';
+
+    document.cookie = cookie;
+  }
+
+
+  if (window.location.href.includes('?error')) {
+    document.querySelector('#errer__role').style.display = 'block'
+    document.querySelector('#error__pass').style.display = 'none'
+  }
+  document.getElementById('login').addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    const formData = {
+      user: document.getElementById('user').value,
+      password: document.getElementById('password').value,
+    };
+    fetch('server.txt')
+      .then(response => response.text())
+      .then(server => {
+        fetch(server+'/checked', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+          .then(response => response.text())
+          .then(data => {
+            console.log(data == 1)
+            if (data == 1) {
+              setCookie('user', formData.user, 7);
+              setCookie('password', formData.password, 7);
+              window.location.href = 'index.html'
+            } else {
+              document.querySelector('#errer__role').style.display = 'none'
+              document.querySelector('#error__pass').style.display = 'block'
+            }
+          })
+      })
+
+  })
+</script>
+
+</html>

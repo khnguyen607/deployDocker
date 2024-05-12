@@ -1,0 +1,242 @@
+{
+    "Deluxe King": {
+        "BB": {
+            "PR11200BBD12": {
+                "Price": 2206,
+                "adult": 1094,
+                "child": 333
+            }
+        },
+        "BV/BX": {
+            "PR11200BVD12": {
+                "Price": 2559,
+                "adult": 1365,
+                "child": 604
+            }
+        },
+        "FB": {
+            "PR11200FBD12": {
+                "Price": 3832,
+                "adult": 1951,
+                "child": 770
+            }
+        },
+        "FV/FX": {
+            "PR11200FVD12": {
+                "Price": 4239,
+                "adult": 2222,
+                "child": 1041
+            }
+        }
+    },
+    "Deluxe Twin": {
+        "BB": {
+            "PR11200BBD12": {
+                "Price": 2206,
+                "adult": 1094,
+                "child": 333
+            }
+        },
+        "BV/BX": {
+            "PR11200BVD12": {
+                "Price": 2559,
+                "adult": 1365,
+                "child": 604
+            }
+        },
+        "FB": {
+            "PR11200FBD12": {
+                "Price": 3832,
+                "adult": 1951,
+                "child": 770
+            }
+        },
+        "FV/FX": {
+            "PR11200FVD12": {
+                "Price": 4239,
+                "adult": 2222,
+                "child": 1041
+            }
+        }
+    },
+    "Deluxe Twin Ocean View": {
+        "BB": {
+            "PR11200BBD12": {
+                "Price": 2633,
+                "adult": 1094,
+                "child": 332
+            }
+        },
+        "BV/BX": {
+            "PR11200BVD12": {
+                "Price": 2985,
+                "adult": 1365,
+                "child": 604
+            }
+        },
+        "FB": {
+            "PR11200FBD12": {
+                "Price": 4324,
+                "adult": 1951,
+                "child": 770
+            }
+        },
+        "FV/FX": {
+            "PR11200FVD12": {
+                "Price": 4731,
+                "adult": 2223,
+                "child": 1041
+            }
+        }
+    },
+    "Deluxe King Ocean View": {
+        "BB": {
+            "PR11200BBD12": {
+                "Price": 2633,
+                "adult": 1094,
+                "child": 332
+            }
+        },
+        "BV/BX": {
+            "PR11200BVD12": {
+                "Price": 2985,
+                "adult": 1365,
+                "child": 604
+            }
+        },
+        "FB": {
+            "PR11200FBD12": {
+                "Price": 4324,
+                "adult": 1951,
+                "child": 770
+            }
+        },
+        "FV/FX": {
+            "PR11200FVD12": {
+                "Price": 4731,
+                "adult": 2223,
+                "child": 1041
+            }
+        }
+    },
+    "Executive Suite King": {
+        "BB": {
+            "PR11200BBD12": {
+                "Price": 3059,
+                "adult": 1094,
+                "child": 333
+            }
+        },
+        "BV/BX": {
+            "PR11200BVD12": {
+                "Price": 3412,
+                "adult": 1365,
+                "child": 604
+            }
+        },
+        "FB": {
+            "PR11200FBD12": {
+                "Price": 4816,
+                "adult": 1952,
+                "child": 770
+            }
+        },
+        "FV/FX": {
+            "PR11200FVD12": {
+                "Price": 5223,
+                "adult": 2223,
+                "child": 1042
+            }
+        }
+    },
+    "Villa 2-Bedroom": {
+        "BB": {
+            "BABBBRD12": {
+                "Price": 7578,
+                "adult": 0,
+                "child": 334
+            }
+        },
+        "BV/BX": {
+            "BABVBRD12": {
+                "Price": 8678,
+                "adult": 0,
+                "child": 610
+            }
+        },
+        "FB": {
+            "BAFBBRD12": {
+                "Price": 11058,
+                "adult": 0,
+                "child": 774
+            }
+        },
+        "FV/FX": {
+            "BAFVBRD12": {
+                "Price": 12159,
+                "adult": 0,
+                "child": 1049
+            }
+        }
+    },
+    "Villa 3-Bedroom": {
+        "BB": {
+            "BABBBRD12": {
+                "Price": 9884,
+                "adult": 0,
+                "child": 335
+            }
+        },
+        "BV/BX": {
+            "BABVBRD12": {
+                "Price": 11535,
+                "adult": 0,
+                "child": 610
+            }
+        },
+        "FB": {
+            "BAFBBRD12": {
+                "Price": 15105,
+                "adult": 0,
+                "child": 774
+            }
+        },
+        "FV/FX": {
+            "BAFVBRD12": {
+                "Price": 16756,
+                "adult": 0,
+                "child": 1049
+            }
+        }
+    },
+    "Villa 3-Bedroom Ocean View": {
+        "BB": {
+            "HBBBDO": {
+                "Price": 11798,
+                "adult": 0,
+                "child": 323
+            }
+        },
+        "BV/BX": {
+            "BABVBRD12": {
+                "Price": 13543,
+                "adult": 0,
+                "child": 610
+            }
+        },
+        "FB": {
+            "BAFBBRD12": {
+                "Price": 17113,
+                "adult": 0,
+                "child": 774
+            }
+        },
+        "FV/FX": {
+            "BAFVBRD12": {
+                "Price": 18764,
+                "adult": 0,
+                "child": 1049
+            }
+        }
+    }
+}
