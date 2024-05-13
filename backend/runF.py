@@ -528,7 +528,7 @@ def runF(datein, dateout, hotel):
           
 # Chạy hàm main
 # s = time.time()
-# resultFinal = runF('2024-05-11', '2024-05-12', 'Vinpearl Resort Nha Trang')
+# resultFinal = runF('2024-05-11', '2024-05-12', 'Vinpearl Resort & Spa Nha Trang Bay')
 # print(resultFinal)
 # e = time.time()
 # print('thời gian chạy: '+ str(e-s))
